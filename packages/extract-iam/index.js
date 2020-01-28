@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 const Extract = require('./Extract'),
 	program = require('commander');
 
