@@ -1,29 +1,28 @@
-const Extract = require('./Extract'),
-	program = require('commander');
+import Extract from './Extract';
+import { option, parse, roleName, J, Y } from 'commander';
 
-program
-	.option('-r --role-name <type>', 'IAM Role name to extract.')
+option('-r --role-name <type>', 'IAM Role name to extract.')
 	.option('-y', 'Output in YAML format.')
 	.option('-j', 'Output in JSON format.');
 
-program.parse(process.argv);
+parse(process.argv);
 
 async function run() {
-	const extractor = new Extract(program.roleName);
+	const extractor = new Extract(roleName);
 	let resource;
 
 	try {
-		resource = await extractor.extract(program.roleName);
+		resource = await extractor.extract(roleName);
 	} catch (e) {
 		console.error('Failed extracting role:', e.message);
 		process.exit(1);
 	}
 
-	if (program.J) {
+	if (J) {
 		console.log('\n', JSON.stringify(resource, null, 2));
 	}
 
-	if (program.Y || (!program.Y && !program.J)) {
+	if (Y || (!Y && !J)) {
 		console.log('\n', extractor.toYaml(resource));
 	}
 }
