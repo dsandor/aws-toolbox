@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "bin": {
-    "extract-iam": "index.js"
+    "extract-iam": "./index.js"
   },
   "dependencies": {
     "aws-sdk": "^2.609.0",
