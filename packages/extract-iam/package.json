@@ -1,5 +1,5 @@
 {
-  "name": "extract-iam",
+  "name": "awsextract-iam",
   "version": "0.0.4",
   "main": "index.js",
   "license": "MIT",
@@ -14,5 +14,6 @@
   },
   "engines": {
     "node": ">= 12.0"
-  }
+  },
+  "gitHead": "7a6b5ab2e8193dae9beca9236ebc26f5011216be"
 }
