@@ -7,7 +7,7 @@
     "extract-iam": "./index.js"
   },
   "dependencies": {
-    "aws-sdk": "^2.609.0",
+    "aws-sdk": "^2.814.0",
     "camelcase": "^5.3.1",
     "commander": "^4.1.0",
     "json-to-pretty-yaml": "^1.2.2"
